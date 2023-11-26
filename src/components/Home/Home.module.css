@@ -1,0 +1,114 @@
+.Home {
+    min-height: 45vh;
+    width:100%;
+}
+
+.pictureContainer {
+    position: relative;
+    height: 30vmax;
+    margin:10px 10px;
+    width:auto;
+    
+  }
+  
+  .pictureContainer::before {
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    /* Replace 'url(path_to_your_image)' with the actual path to your image in the src folder */
+    background-image: url('https://cdn.pixabay.com/photo/2018/10/04/11/37/woman-3723444_1280.jpg');
+    background-size: cover; /* Adjust as needed */
+    background-position: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 80.5% 100%, 0% 40.3%);
+  }
+
+  .textInsideClip {
+    position: absolute;
+    bottom: 0; /* Adjust positioning as needed */
+    color: rgb(19, 18, 18);
+    
+  }
+  
+  .textInsideClip p {
+    margin: 0;
+    padding-bottom: 1vmax; 
+    font-size: 2.3vw;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: yellow;
+  }
+
+  .textInsideClip::first-child {
+    background-color: red;
+  }
+
+  .textInsideClip p:first-child {
+    color: green;
+    font-weight: bold;
+    font-size: 3vw;/* This will apply a background color to the first paragraph within .textInsideClip */
+  }
+
+  .recipesVarietiesContainer{
+
+    width: 100%;
+    /* background: rgba(255, 232, 101, 0.651);
+    background: radial-gradient(circle, rgba(179, 175, 156, 0.507) 53%, rgba(255,255,255,1) 100%); */
+  }
+
+
+  .recipesVarietiesContainer .recipesVarieties{
+    width: 100%;
+    padding:10px 10px;
+    background-color: aliceblue;
+  }
+
+  .recipesVarietiesContainer .header{
+    display: flex;
+    height: 4vmax;
+    /* background: rgb(247,255,58);
+    background: linear-gradient(90deg, rgba(247,255,58,1) 0%, rgba(233,255,112,0.6951155462184874) 51%, rgba(255,255,255,1) 56%); */
+    background: rgb(255,227,65);
+background: linear-gradient(90deg, rgba(255,227,65,1) 0%, rgba(49,126,255,0.8939950980392157) 100%);
+    align-items: center;
+    padding-left: 10px;
+    text-decoration: underline;
+    font-style: italic;
+    text-decoration-color: green;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-around;
+    margin: 10px 0px;
+}
+
+.cardsContainer .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+   width: 20vmax;
+   background: rgba(236,244,211,0.65);
+   -webkit-backdrop-filter: blur(26px);
+   backdrop-filter: blur(26px);
+   border: 1px solid rgba(236,244,211,0.325);
+   border-radius: 15px;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   transition: transform 0.3s ease;
+}
+
+.cardsContainer .card:hover {
+    transform: scale(1.03);
+}
+
+.cardsContainer .card img{
+    width: 100%;
+    height: 90%;
+    border-radius: 15px;
+}

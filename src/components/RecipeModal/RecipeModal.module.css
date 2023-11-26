@@ -1,0 +1,89 @@
+/* Modal styles */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+  }
+  
+  /* Modal Content */
+  .modalContent {
+    background-color: #fefefe;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    height: 90%;
+    overflow-y: auto;
+  }
+  
+  .modalContent {
+    text-align: center;
+  }
+
+  /* Close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .recipeHead {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .recipeImage {
+    max-width: 50%;
+    padding: 10px;
+  }
+  .recipeImage img{
+    width: 100%;
+  }
+
+  .details{
+    display: flex;
+    background-color: #fdffd8c7;
+  }
+
+  .details li {
+    display: flex;
+    text-decoration: none;
+    padding: 5px;
+  }
+  .details .ingredients{
+    min-width: 300px;
+    padding: 10px;
+  }
+  .details .nutritions{
+    min-width: 300px;
+    border-left: 1px solid rgba(165, 165, 165, 0.61);
+    padding: 10px;
+  }
+
+  .preparation {
+    margin-top: 20px;
+    border-top: 1px solid rgba(165, 165, 165, 0.61);
+    padding-top: 20px;
+  }
+  .preparation button{
+   border: 1px solid rgba(165, 165, 165, 0.61);
+   padding: 5px;
+   border-radius: 15px;
+   margin-right: 10px;
+  }
