@@ -14,16 +14,11 @@ import {
 const routes = createRoutesFromElements(
   <Route path="/" element={<Navbar />}>
     <Route index element={<Home />} />
-    <Route path="home" element={null} >
+    <Route path="home"  >
     <Route index element={<Home />} />
     </Route>
     <Route path="home/recipes" element={<Recipes />} />
   </Route>
-  // <Route path="/" element={<Navbar />}>
-  //   <Route index element={<Home />} />
-  //   <Route path="home" element={<Home />} />
-  //   <Route path="home/recipes" element={<Recipes />} />
-  // </Route>
 )
 
 const router = createBrowserRouter(routes);

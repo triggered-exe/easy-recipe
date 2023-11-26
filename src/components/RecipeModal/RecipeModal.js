@@ -9,34 +9,35 @@ const RecipeModal = ({ closeModal }) => {
   const { selectedRecipe } = useSelector(recipeSelector);
   const { resetSelectedRecipe, fetchSelectedRecipe } = actions;
 
+  // reset the selectedrecipe 
   useEffect(() => {
-
     return () => {
       dispatch(resetSelectedRecipe());
     };
-  }, [selectedRecipe, dispatch, resetSelectedRecipe, fetchSelectedRecipe]);
-  console.log(selectedRecipe.hits[0].recipe);
-  if (selectedRecipe === '') {
+  }, []);
+
+  
+  // show loading animation if recipe is not loaded yet
+  if (!selectedRecipe || selectedRecipe.length === 0) {
     console.log('Loading...');
-    return (
-      <div className={styles.modal}>
-      <div className={styles.loader}>
-      <div className={styles.modalContent}>
-        <Circles
-          height={80}
-          width={80}
-          color="#4fa94d"
-          ariaLabel="circles-loading"
-          visible={true}
-        />
-      </div>
-      </div>
-      </div>
-    );
+        return (
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            <Circles
+              height={80}
+              width={80}
+              color="#4fa94d"
+              ariaLabel="circles-loading"
+              visible={true}
+            />
+          </div>
+        );
   }
 
+  console.log(selectedRecipe);
   const recipe = selectedRecipe.hits[0].recipe;
   console.log(recipe);
+
+  
   const displayNutrients = () => {
     return Object.keys(recipe.totalNutrients).map((key, index) => {
       const { label, quantity, unit } = recipe.totalNutrients[key];
@@ -48,6 +49,7 @@ const RecipeModal = ({ closeModal }) => {
       
     });
   };
+
 
   return (
     <div className={styles.modal}>

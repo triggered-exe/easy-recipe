@@ -1,12 +1,11 @@
 import React from 'react'
 import styles  from './Home.module.css'
 import {useNavigate} from 'react-router-dom';
-import { recipeSelector, fetchRecipes, fetchSelectedRecipe } from '../../redux/recipeSlice'
-import { useSelector, useDispatch } from 'react-redux';
+import {fetchRecipes } from '../../redux/recipeSlice'
+import {  useDispatch } from 'react-redux';
 
 const Home = () => {
     const dispatch = useDispatch();
-    const {recipes, selectedRecipe} = useSelector(recipeSelector);
     const navigate = useNavigate();
 
   return (

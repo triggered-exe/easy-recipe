@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import {useNavigate} from 'react-router-dom';
 
 const initialState = {
-    searchUrl : '',
     recipes : [],
     recipe:[]
   };
@@ -17,16 +15,19 @@ const initialState = {
         setRecipe(state, action) {
             state.recipes = action.payload;
         },
+        resetRecipe(state, action){
+            state.recipes = [];
+        },
         setSelectedRecipe(state, action) {
             state.selectedRecipe = action.payload;
         },
         resetSelectedRecipe(state, action) {
-            state.selectedRecipe = "";
+            state.selectedRecipe = [];
         },
     }
 })
 
-
+// fetch the recipes
 export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', async (searchString, thunkAPI) => {
     try{
         let url = `https://api.edamam.com/api/recipes/v2?type=public&app_id=${appId}&app_key=${appKey}&${searchString}`
@@ -39,6 +40,7 @@ export const fetchRecipes = createAsyncThunk('recipe/fetchRecipes', async (searc
     }
 })
 
+// fetch the selected recipe
 export const fetchSelectedRecipe = createAsyncThunk('recipe/fetchSelectedRecipe', async (uri, thunkAPI) => {
     try {
         const encodedURI = encodeURIComponent(uri);
